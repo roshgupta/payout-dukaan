@@ -1,7 +1,7 @@
-import logo from './logo.svg';
-import './App.css';
+import Payout from "./components/payouts/Payout";
 
-function App() {
+
+const App = () => {
   return (
     <Payout />
   );
