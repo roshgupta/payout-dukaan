@@ -7,7 +7,7 @@ const Header = () => {
       <div className="title">
         <h1>Payouts</h1>
         <div className="ques">
-          <ReactSVG src="/icons/ques.svg" className="ques-icon" />
+          <ReactSVG src="/icons/ques.svg" className=" svg ques-icon" />
           <p>How it works</p>
         </div>
       </div>

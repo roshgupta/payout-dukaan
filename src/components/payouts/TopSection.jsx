@@ -76,12 +76,13 @@ const TopSection = () => {
 
 const StyledTopSection = styled.div`
   width: 100%;
-  height: 36px;
+
   .top-bar {
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-bottom: 24px;
+    height: 36px;
     h3 {
       font-size: 20px;
       line-height: 28px;
