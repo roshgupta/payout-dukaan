@@ -12,7 +12,7 @@ const Sidebar = () => {
           width={40}
           alt="Company Logo"
         />
-        <div>
+        <div className="text">
           <p>Nishyan</p>
           <a href="#">Visit store</a>
         </div>
@@ -61,6 +61,14 @@ const StyledTop = styled.div`
   margin-bottom: 24px;
   padding-left: 8px;
   padding-right: 8px;
+  gap: 12px;
+  img {
+    flex-grow: 0;
+  }
+  .text {
+    width: 100%;
+    flex-grow: 1;
+  }
   div p {
     font-size: 15px;
   }
