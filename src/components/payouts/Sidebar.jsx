@@ -18,17 +18,22 @@ const Sidebar = () => {
         </div>
         <ReactSVG src="/icons/down.svg" />
       </StyledTop>
-      <NavButton icon="/icons/home.svg" text="Home" />
-      <NavButton icon="/icons/orders.svg" text="Orders" />
-      <NavButton icon="/icons/products.svg" text="Products" />
-      <NavButton icon="/icons/delivery.svg" text="Delivery" />
-      <NavButton icon="/icons/marketing.svg" text="Marketing" />
-      <NavButton icon="/icons/analytics.svg" text="Analytics" />
-      <NavButton icon="/icons/payouts.svg" text="Payouts" />
-      <NavButton icon="/icons/discounts.svg" text="Discounts" />
-      <NavButton icon="/icons/audience.svg" text="Audience" />
-      <NavButton icon="/icons/appearance.svg" text="Appearance" />
-      <NavButton icon="/icons/plugins.svg" text="Plugins" />
+      <NavButton hrefValue="#" icon="/icons/home.svg" text="Home" />
+      <NavButton hrefValue="#" icon="/icons/orders.svg" text="Orders" />
+      <NavButton hrefValue="#" icon="/icons/products.svg" text="Products" />
+      <NavButton hrefValue="#" icon="/icons/delivery.svg" text="Delivery" />
+      <NavButton hrefValue="#" icon="/icons/marketing.svg" text="Marketing" />
+      <NavButton hrefValue="#" icon="/icons/analytics.svg" text="Analytics" />
+      <NavButton
+        isActive={true}
+        hrefValue="#"
+        icon="/icons/payouts.svg"
+        text="Payouts"
+      />
+      <NavButton hrefValue="#" icon="/icons/discounts.svg" text="Discounts" />
+      <NavButton hrefValue="#" icon="/icons/audience.svg" text="Audience" />
+      <NavButton hrefValue="#" icon="/icons/appearance.svg" text="Appearance" />
+      <NavButton hrefValue="#" icon="/icons/plugins.svg" text="Plugins" />
       <StyledBottom>
         <div className="sidebar-bottom-wallet">
           <ReactSVG src="/icons/wallet.svg" />
@@ -52,6 +57,7 @@ const StyledSideSection = styled.section`
   color: #d2d4d9;
   display: flex;
   flex-direction: column;
+  overflow: hidden;
 `;
 const StyledTop = styled.div`
   width: 100%;
@@ -84,6 +90,8 @@ const StyledBottom = styled.div`
   height: 54px;
   background-color: #353c53;
   border-radius: 4px;
+  margin-left: 8px;
+  margin-right: 8px;
   margin-top: auto;
   padding: 9px 12px;
   display: flex;
@@ -107,12 +115,12 @@ const StyledBottom = styled.div`
     color: #fff;
     .text {
       font-size: 13px;
-      font-weight: medium;
+      font-weight: 500;
       line-height: 16px;
     }
     .amount {
       font-size: 16px;
-      font-weight: medium;
+      font-weight: 500;
       line-height: 24px;
     }
   }

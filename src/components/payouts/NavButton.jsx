@@ -2,9 +2,9 @@ import React from "react";
 import styled from "styled-components";
 import { ReactSVG } from "react-svg";
 
-const NavButton = ({ icon, text }) => {
+const NavButton = ({ icon, text, hrefValue, isActive }) => {
   return (
-    <StyledNavButton>
+    <StyledNavButton href={hrefValue} isActive={isActive}>
       <ReactSVG src={icon} />
       <p>{text}</p>
     </StyledNavButton>
@@ -12,6 +12,8 @@ const NavButton = ({ icon, text }) => {
 };
 
 const StyledNavButton = styled.a`
+  background-color: ${({ isActive }) =>
+    isActive ? "rgba(255, 255, 255, 0.1)" : null};
   width: 100%;
   height: 36px;
   padding: 8px 16px;
@@ -20,7 +22,8 @@ const StyledNavButton = styled.a`
   align-items: center;
   margin-bottom: 4px;
   font-size: 14px;
-  font-weight: medium;
+  font-weight: 500;
+  border-radius: 4px;
   p {
     margin-left: 12px;
   }
