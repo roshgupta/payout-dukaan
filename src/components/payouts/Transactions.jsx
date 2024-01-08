@@ -121,7 +121,7 @@ const TableRow = ({
   return (
     <StyledTableRow status={status}>
       <td>
-        <a className="orderId-link" href="#">
+        <a className="orderId-link" href="/">
           #<span>{orderID}</span>
         </a>
       </td>

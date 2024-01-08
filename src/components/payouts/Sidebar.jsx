@@ -14,26 +14,26 @@ const Sidebar = () => {
         />
         <div className="text">
           <p>Nishyan</p>
-          <a href="#">Visit store</a>
+          <a href="/">Visit store</a>
         </div>
         <ReactSVG src="/icons/down.svg" />
       </StyledTop>
-      <NavButton hrefValue="#" icon="/icons/home.svg" text="Home" />
-      <NavButton hrefValue="#" icon="/icons/orders.svg" text="Orders" />
-      <NavButton hrefValue="#" icon="/icons/products.svg" text="Products" />
-      <NavButton hrefValue="#" icon="/icons/delivery.svg" text="Delivery" />
-      <NavButton hrefValue="#" icon="/icons/marketing.svg" text="Marketing" />
-      <NavButton hrefValue="#" icon="/icons/analytics.svg" text="Analytics" />
+      <NavButton hrefValue="/" icon="/icons/orders.svg" text="Orders" />
+      <NavButton hrefValue="/" icon="/icons/products.svg" text="Products" />
+      <NavButton hrefValue="/" icon="/icons/delivery.svg" text="Delivery" />
+      <NavButton hrefValue="/" icon="/icons/marketing.svg" text="Marketing" />
+      <NavButton hrefValue="/" icon="/icons/analytics.svg" text="Analytics" />
+      <NavButton hrefValue="/" icon="/icons/home.svg" text="Home" />
       <NavButton
         isActive={true}
         hrefValue="#"
         icon="/icons/payouts.svg"
         text="Payouts"
       />
-      <NavButton hrefValue="#" icon="/icons/discounts.svg" text="Discounts" />
-      <NavButton hrefValue="#" icon="/icons/audience.svg" text="Audience" />
-      <NavButton hrefValue="#" icon="/icons/appearance.svg" text="Appearance" />
-      <NavButton hrefValue="#" icon="/icons/plugins.svg" text="Plugins" />
+      <NavButton hrefValue="/" icon="/icons/audience.svg" text="Audience" />
+      <NavButton hrefValue="/" icon="/icons/discounts.svg" text="Discounts" />
+      <NavButton hrefValue="/" icon="/icons/appearance.svg" text="Appearance" />
+      <NavButton hrefValue="/" icon="/icons/plugins.svg" text="Plugins" />
       <StyledBottom>
         <div className="sidebar-bottom-wallet">
           <ReactSVG src="/icons/wallet.svg" />
