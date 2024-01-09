@@ -4,7 +4,7 @@ import { ReactSVG } from "react-svg";
 
 const NavButton = ({ icon, text, hrefValue, isActive }) => {
   return (
-    <StyledNavButton href={hrefValue} isActive={isActive}>
+    <StyledNavButton $isActive={isActive} href={hrefValue}>
       <ReactSVG src={icon} />
       <p>{text}</p>
     </StyledNavButton>
@@ -12,8 +12,8 @@ const NavButton = ({ icon, text, hrefValue, isActive }) => {
 };
 
 const StyledNavButton = styled.a`
-  background-color: ${({ isActive }) =>
-    isActive ? "rgba(255, 255, 255, 0.1)" : null};
+  background-color: ${({ $isActive }) =>
+    $isActive ? "rgba(255, 255, 255, 0.1)" : null};
   width: 100%;
   height: 36px;
   padding: 8px 16px;

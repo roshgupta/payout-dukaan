@@ -106,15 +106,20 @@ const CardContainer = styled.div`
   align-items: flex-start;
   gap: 20px;
   margin-bottom: 32px;
+  @media only screen and (max-width: 675px) {
+    flex-direction: column;
+  }
   .cards {
     flex-grow: 1;
     border-radius: 8px;
     width: 100%;
     height: 118px;
     box-shadow: 0px 2px 6px 0px rgba(26, 24, 30, 0.04);
+
     .card-content {
       padding: 20px 24px;
       width: 100%;
+
       .top {
         display: flex;
         align-items: center;

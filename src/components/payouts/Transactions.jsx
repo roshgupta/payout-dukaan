@@ -119,7 +119,7 @@ const TableRow = ({
   OrderAmount,
 }) => {
   return (
-    <StyledTableRow status={status}>
+    <StyledTableRow $status={status}>
       <td>
         <a className="orderId-link" href="/">
           #<span>{orderID}</span>
@@ -127,7 +127,7 @@ const TableRow = ({
       </td>
       <td className="status-td">
         <span className="status"></span>
-        {status}
+        <span className="status-text">{status}</span>
       </td>
       <td>{transactionID}</td>
       <td>{refundDate}</td>
@@ -148,6 +148,11 @@ const StyledTableRow = styled.tr`
   font-weight: 400;
   line-height: 20px;
   border-bottom: 1px solid #e6e6e6;
+  @media only screen and (max-width: 675px) {
+    padding: 4px;
+    font-size: 12px;
+    grid-template-columns: 2fr 1fr 3fr 3fr 2fr;
+  }
   td {
     flex-grow: 1;
     text-align: start;
@@ -160,6 +165,11 @@ const StyledTableRow = styled.tr`
     display: flex;
     justify-content: flex-start;
     align-items: center;
+    .status-text {
+      @media only screen and (max-width: 675px) {
+        display: none;
+      }
+    }
   }
   .orderId-link {
     color: #146eb4;
@@ -170,15 +180,15 @@ const StyledTableRow = styled.tr`
     height: 10px;
     border-radius: 50%;
     margin-right: 6px;
-    background-color: ${({ status }) =>
-      status === "Successful" ? "#17B31B" : "#999999"};
+    background-color: ${({ $status }) =>
+      $status === "Successful" ? "#17B31B" : "#999999"};
   }
 `;
 
 const TransactionTableContainer = styled.table`
   width: 100%;
   display: flex;
-  height: 36vh;
+
   overflow-y: scroll;
   flex-direction: column;
   thead {
@@ -196,6 +206,11 @@ const TransactionTableContainer = styled.table`
       font-weight: 400;
       border-bottom: 1px solid #e6e6e6;
       line-height: 20px;
+      @media only screen and (max-width: 675px) {
+        padding: 4px;
+        font-size: 12px;
+        grid-template-columns: 2fr 1fr 3fr 3fr 2fr;
+      }
       th {
         flex-grow: 1;
         text-align: start;
@@ -209,7 +224,7 @@ const TransactionTableContainer = styled.table`
 
 const StyledTransaction = styled.div`
   width: 100%;
-  height: auto;
+  height: calc(100vh - 310px);
   .transaction-header {
     margin-bottom: 24px;
     h4 {
