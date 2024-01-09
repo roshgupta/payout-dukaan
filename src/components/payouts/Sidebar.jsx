@@ -2,9 +2,15 @@ import styled from "styled-components";
 import NavButton from "./NavButton";
 import { ReactSVG } from "react-svg";
 
-const Sidebar = () => {
+const Sidebar = ({ isSideBarClosed, setIsSideBarClosed }) => {
   return (
-    <StyledSideSection>
+    <StyledSideSection $isSideBarClosed={isSideBarClosed}>
+      <div
+        className="cross"
+        onClick={() => setIsSideBarClosed((value) => !value)}
+      >
+        <span>X</span>
+      </div>
       <StyledTop>
         <img
           src="/images/company.png"
@@ -18,22 +24,72 @@ const Sidebar = () => {
         </div>
         <ReactSVG src="/icons/down.svg" />
       </StyledTop>
-      <NavButton hrefValue="/" icon="/icons/orders.svg" text="Orders" />
-      <NavButton hrefValue="/" icon="/icons/products.svg" text="Products" />
-      <NavButton hrefValue="/" icon="/icons/delivery.svg" text="Delivery" />
-      <NavButton hrefValue="/" icon="/icons/marketing.svg" text="Marketing" />
-      <NavButton hrefValue="/" icon="/icons/analytics.svg" text="Analytics" />
-      <NavButton hrefValue="/" icon="/icons/home.svg" text="Home" />
+      <NavButton
+        isActive={false}
+        hrefValue="/"
+        icon="/icons/orders.svg"
+        text="Orders"
+      />
+      <NavButton
+        isActive={false}
+        hrefValue="/"
+        icon="/icons/products.svg"
+        text="Products"
+      />
+      <NavButton
+        isActive={false}
+        hrefValue="/"
+        icon="/icons/delivery.svg"
+        text="Delivery"
+      />
+      <NavButton
+        isActive={false}
+        hrefValue="/"
+        icon="/icons/marketing.svg"
+        text="Marketing"
+      />
+      <NavButton
+        isActive={false}
+        hrefValue="/"
+        icon="/icons/analytics.svg"
+        text="Analytics"
+      />
+      <NavButton
+        isActive={false}
+        hrefValue="/"
+        icon="/icons/home.svg"
+        text="Home"
+      />
       <NavButton
         isActive={true}
         hrefValue="#"
         icon="/icons/payouts.svg"
         text="Payouts"
       />
-      <NavButton hrefValue="/" icon="/icons/audience.svg" text="Audience" />
-      <NavButton hrefValue="/" icon="/icons/discounts.svg" text="Discounts" />
-      <NavButton hrefValue="/" icon="/icons/appearance.svg" text="Appearance" />
-      <NavButton hrefValue="/" icon="/icons/plugins.svg" text="Plugins" />
+      <NavButton
+        isActive={false}
+        hrefValue="/"
+        icon="/icons/audience.svg"
+        text="Audience"
+      />
+      <NavButton
+        isActive={false}
+        hrefValue="/"
+        icon="/icons/discounts.svg"
+        text="Discounts"
+      />
+      <NavButton
+        isActive={false}
+        hrefValue="/"
+        icon="/icons/appearance.svg"
+        text="Appearance"
+      />
+      <NavButton
+        isActive={false}
+        hrefValue="/"
+        icon="/icons/plugins.svg"
+        text="Plugins"
+      />
       <StyledBottom>
         <div className="sidebar-bottom-wallet">
           <ReactSVG src="/icons/wallet.svg" />
@@ -48,6 +104,44 @@ const Sidebar = () => {
 };
 
 const StyledSideSection = styled.section`
+  @media only screen and (max-width: 675px) {
+    display: none;
+    ${({ $isSideBarClosed }) =>
+      $isSideBarClosed
+        ? `
+      display:flex;
+      position:absolute;
+      top:0px;
+      left:0px;
+      width:80vw;
+      z-index:10;
+    `
+        : null}
+  }
+  .cross {
+    display: none;
+    position: absolute;
+    top: 24px;
+    right: 12px;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background-color: #d9d9d9;
+    color: white;
+    @media only screen and (max-width: 675px) {
+      ${({ $isSideBarClosed }) =>
+        $isSideBarClosed
+          ? `
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      color:black
+
+    `
+          : null}
+    }
+  }
+  transition: all 200ms ease-in-out;
   min-width: 224px;
   cursor: pointer;
   height: 100%;

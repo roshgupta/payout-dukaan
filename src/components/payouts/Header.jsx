@@ -1,10 +1,15 @@
 import styled from "styled-components";
 import { ReactSVG } from "react-svg";
 
-const Header = () => {
+const Header = ({ setIsSideBarClosed }) => {
   return (
     <StyledHeader>
       <div className="title">
+        <ReactSVG
+          className="sidebar-close"
+          src="/icons/open-sidebar.svg"
+          onClick={() => setIsSideBarClosed((value) => !value)}
+        />
         <h1>Payouts</h1>
         <div className="ques">
           <ReactSVG src="/icons/ques.svg" className=" svg ques-icon" />
@@ -37,6 +42,10 @@ const StyledHeader = styled.header`
   display: flex;
   align-items: center;
   justify-content: space-evenly;
+  @media only screen and (max-width: 675px) {
+    gap: 8px;
+    padding: 12px 8px;
+  }
   .title {
     display: flex;
     flex-grow: 1;
@@ -44,6 +53,24 @@ const StyledHeader = styled.header`
     justify-content: flex-start;
     align-items: center;
     max-width: 360px;
+    @media only screen and (max-width: 675px) {
+      /* flex-shrink: 1; */
+      /* max-width: 120px; */
+    }
+    .sidebar-close {
+      display: none;
+      > div {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      @media only screen and (max-width: 675px) {
+        display: block;
+        width: 16px;
+        height: 100%;
+        cursor: pointer;
+      }
+    }
     h1 {
       font-size: 20px;
       line-height: 28px;
@@ -53,10 +80,14 @@ const StyledHeader = styled.header`
       color: #4d4d4d;
       display: flex;
       align-items: center;
+      @media only screen and (max-width: 675px) {
+        display: none;
+      }
       .ques-icon {
         height: 14px;
         width: 14px;
         margin-right: 6px;
+
         > div {
           display: flex;
           justify-content: center;
@@ -71,9 +102,15 @@ const StyledHeader = styled.header`
   }
   .inputbox {
     max-width: 400px;
+    width: 100%;
     height: 40px;
     position: relative;
     flex-grow: 1;
+    @media only screen and (max-width: 675px) {
+      /* flex-shrink: 1; */
+      /* max-width: 200px; */
+    }
+
     input {
       outline: none;
       border: none;
@@ -81,9 +118,6 @@ const StyledHeader = styled.header`
       height: 100%;
       background-color: #f2f2f2;
       color: #808080;
-      padding-top: 12px;
-      padding-bottom: 12px;
-      padding-left: 40px;
       padding: 12px 12px 12px 40px;
       border-radius: 6px;
       font-size: 15px;
@@ -99,6 +133,9 @@ const StyledHeader = styled.header`
     display: flex;
     justify-content: flex-end;
     flex-grow: 1;
+    @media only screen and (max-width: 675px) {
+      /* flex-shrink: 1; */
+    }
     .icon-menu-icons {
       height: 40px;
       width: 40px;
