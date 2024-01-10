@@ -3,6 +3,8 @@
 ![Image](image.png)
 
 > First image is given design and second image of screenshot of the web page built
+
+Open [Website Link](https://payout-dukaan.netlify.app/)
 ## Image of website created
 
 ![WebPage Image](image-1.png)
